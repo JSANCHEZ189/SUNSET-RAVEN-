@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme {
+  --font-cyber: 'Orbitron', monospace, sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --color-cyber-red: #ff4655;
+  --color-cyber-red-hover: #ff6b77;
+  --color-cyber-cyan: #00d9ff;
+  --color-cyber-cyan-hover: #6ee8ff;
+  --color-cyber-dark: #050608;
+  --color-cyber-surface: #0b1018;
+  --color-cyber-card: #0e1520;
+}
+
+@layer base {
+  body {
+    background-color: #050608;
+    color: #cfd8e3;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, .font-cyber {
+    font-family: var(--font-cyber);
+  }
+}
+
+/* Cyber grid background */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.cyber-grid-cyan {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 217, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 217, 255, 0.05) 1px, transparent 1px);
+}
+
+/* Glowing cyberpunk box shadows */
+.glow-red {
+  box-shadow: 0 0 15px rgba(255, 70, 85, 0.4), 0 0 30px rgba(255, 70, 85, 0.2);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 15px rgba(0, 217, 255, 0.4), 0 0 30px rgba(0, 217, 255, 0.2);
+}
+
+.text-glow-red {
+  text-shadow: 0 0 10px rgba(255, 70, 85, 0.7);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 10px rgba(0, 217, 255, 0.7);
+}
+
+/* Tech clipped corner button / card */
+.clip-corner-tl-br {
+  clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+}
+
+.clip-corner-sm {
+  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+}
+
+/* Custom cyber scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050608;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a2333;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 217, 255, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff4655;
+}
